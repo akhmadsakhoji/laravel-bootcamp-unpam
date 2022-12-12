@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class,'index']);
 Route::get('profile', [ProfileController::class,'index']);
 Route::get('kategori', [KategoriController::class,'index']);
+Route::get('kategoribaru', [KategoriController::class,'databaru']);

@@ -27,6 +27,7 @@
                     </tr>
                     @endforeach
             </table>
+            <a href="{{url("kategoribaru")}}"><button class="btn btn-primary" >TAMBAH KATEGORI</button></a>
         </div>
     </main>
 @endsection
