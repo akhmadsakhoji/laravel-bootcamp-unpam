@@ -6,16 +6,20 @@
             <div class="btn-toolbar mb-2 mb-md-0">
             </div>
         </div>
-        <form>
+        <form action="kategoriproduk" method="POST">
+            @csrf
             <div class="mb-3">
-                <label for="idkategori" class="form-label">ID Kategori</label>
-                <input type="text" class="form-control" id="idkategori" aria-describedby="emailHelp">
+                <label for="kd_kategori" class="form-label">Kode Kategori</label>
+                <input type="text" name="kd_kategori" class="form-control" id="kd_kategori" @error('kd_kategori') is-invalid @enderror >
+                @error('kd_kategori')
+                    <div class="invallid feedback">{{$message}}</div>
+                @enderror
             </div>
             <div class="mb-3">
-                <label for="namakategori" class="form-label">Nama Kategori</label>
-                <input type="text" class="form-control" id="namakategori">
+                <label for="name_kategori" class="form-label">Nama Kategori</label>
+                <input type="text" name="name_kategori" class="form-control" id="name_kategori">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Add Data</button>
         </form>
     </main>
 @endsection
