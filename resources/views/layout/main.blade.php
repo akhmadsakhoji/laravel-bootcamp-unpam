@@ -110,6 +110,12 @@
                                 Profile
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url('kategori')}}">
+                                <span data-feather="file" class="align-text-bottom"></span>
+                                Kategori Produk
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
