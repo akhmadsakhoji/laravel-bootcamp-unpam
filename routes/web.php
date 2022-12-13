@@ -3,6 +3,7 @@
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DaftarProdukController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,4 +25,5 @@ Route::post('kategoriproduk', [KategoriController::class,'savedatabaru']);
 Route::get('editkategori/{id}', [KategoriController::class,'editkategori']);
 Route::patch('kategoriproduk', [KategoriController::class, 'saveeditkategori']);
 Route::delete('kategoriproduk', [KategoriController::class, 'hapuskategori']);
+Route::get('daftarproduk', [DaftarProdukController::class,'index']);
 
