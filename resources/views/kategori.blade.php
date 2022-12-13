@@ -17,17 +17,20 @@
                     <th>&nbsp;</th>
                 </tr>
                 @php
-                    $baris=1
+                    $baris = 1;
                 @endphp
-                    @foreach ($daftarKategori as $kategori)
+                @foreach ($daftarKategori as $kategori)
                     <tr>
-                        <td>{{$baris++}}</td>
-                        <td>{{$kategori->kd_kategori}}</td>
-                        <td>{{$kategori->name_kategori}}</td>
+                        <td>{{ $baris++ }}</td>
+                        <td>{{ $kategori->kd_kategori }}</td>
+                        <td>{{ $kategori->name_kategori }}</td>
+                        <td>
+                            <a href="{{ url('editkategori') }}/{{ $kategori->id }}"><button class="btn btn-primary">EDIT KATEGORI</button></a>
+                        </td>
                     </tr>
-                    @endforeach
+                @endforeach
             </table>
-            <a href="{{url("kategoribaru")}}"><button class="btn btn-primary" >TAMBAH KATEGORI</button></a>
+            <a href="{{ url('kategoribaru') }}"><button class="btn btn-primary">TAMBAH KATEGORI</button></a>
         </div>
     </main>
 @endsection

@@ -10,9 +10,10 @@
             @csrf
             <div class="mb-3">
                 <label for="kd_kategori" class="form-label">Kode Kategori</label>
-                <input type="text" name="kd_kategori" class="form-control" id="kd_kategori" @error('kd_kategori') is-invalid @enderror >
+                <input type="text" name="kd_kategori" class="form-control" id="kd_kategori"
+                    @error('kd_kategori') is-invalid @enderror>
                 @error('kd_kategori')
-                    <div class="invallid feedback">{{$message}}</div>
+                    <div class="invallid feedback">{{ $message }}</div>
                 @enderror
             </div>
             <div class="mb-3">

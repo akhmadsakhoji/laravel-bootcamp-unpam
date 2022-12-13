@@ -21,3 +21,7 @@ Route::get('profile', [ProfileController::class,'index']);
 Route::get('kategori', [KategoriController::class,'index']);
 Route::get('kategoribaru', [KategoriController::class,'databaru']);
 Route::post('kategoriproduk', [KategoriController::class,'savedatabaru']);
+Route::get('editkategori/{id}', [KategoriController::class,'editkategori']);
+Route::patch('kategoriproduk', [KategoriController::class, 'saveeditkategori']);
+Route::delete('kategoriproduk', [KategoriController::class, 'hapuskategori']);
+
