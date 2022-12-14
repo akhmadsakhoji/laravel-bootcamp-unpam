@@ -13,14 +13,16 @@
                     <th>#</th>
                     <th>Kode Produk</th>
                     <th>Nama Produk</th>
+                    <th>Harga</th>
+                    <th>Jumlah Stok</th>
                     <th>Kategori ID</th>
-                    <th></th>
+                    <th>Edit</th>
                 </tr>
                 @php
                 if(request('page'))
                     $baris=(request('page')-1)*10+1;
                 else {
-                    $baris=0;
+                    $baris=1;
                 }
                 @endphp
                 @foreach ($daftarproduk as $produk)
@@ -28,11 +30,17 @@
                     <td>{{$baris++}}</td>
                     <td>{{$produk->kd_produk}}</td>
                     <td>{{$produk->name_produk}}</td>
+                    <td>{{$produk->harga}}</td>
+                    <td>{{$produk->jml_stok}}</td>
                     <td>{{$produk->kategori->name_kategori}}</td>
+                    <td>
+                        <a href="{{ url('editproduk') }}/{{ $produk->id }}"><button class="btn btn-primary">EDIT PRODUK</button></a>
+                    </td>
                 </tr>
                 @endforeach
             </table>
             {{$daftarproduk->links()}}
+            <a href="daftarprodukbaru"><button class="btn btn-primary mb-4">TAMBAH DATA</button></a>
         </div>
     </main>
 @endsection

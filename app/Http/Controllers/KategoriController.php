@@ -64,13 +64,13 @@ class KategoriController extends Controller
         // ];
         $request->validate(
             [
-                "kd_kategori" => "required|min:1|max:10|unique:tbl_kategori,kd_kategori"
+                "kd_kategori" => "required|min:1|max:10"
             ],
             [
                 "kd_kategori.required" => "Kode Kategori Harus di Isi",
-                "Kd_kategori.min" => "Input Minimal 1",
-                "Kd_kategori.max" => "Input Maximal 10",
-                "Kd_kategori.unique" => "Kode Kategori Sudah Terdaftar"
+                "kd_kategori.min" => "Input Minimal 1",
+                "kd_kategori.max" => "Input Maximal 10",
+                // "kd_kategori.unique" => "Kode Kategori Sudah Terdaftar"
             ]
         );
         // KategoriProdukModel::create(
