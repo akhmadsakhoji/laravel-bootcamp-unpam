@@ -8,6 +8,8 @@ use App\Http\Controllers\KategoriController;
 use Illuminate\Database\Seeder;
 use App\Models\KategoriProdukModel;
 use App\Models\ProdukModel;
+use App\Models\User;
+use GuzzleHttp\Promise\Create;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,6 +26,17 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        User::Create(
+            [
+                "name" => "Akhmad Sakhoji Jamaludin",
+                "email" => "akhmadsakhoji@gmail.com",
+                "password" => bcrypt("Admin123"),
+                "isAdmin" => true
+            ]
+        );
+
+        User::factory(10)->create();
 
         KategoriProdukModel::Create(
             [

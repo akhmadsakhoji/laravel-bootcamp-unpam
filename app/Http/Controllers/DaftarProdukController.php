@@ -132,15 +132,18 @@ class DaftarProdukController extends Controller
         return redirect('daftarproduk');
     }
 
-    public function cetakpdf()
-    {
-        $data = Produkmodel::all();
-        $param = [
-            'title'         => 'Cetak PDF',
-            'modulName'     => 'produk',
-            'daftarproduk'  => $data
-        ];
-        $pdf = PDF::loadview('laporanproduk', ['daftarproduk' => $data]);
-        return $pdf->download('laporanproduk.pdf');
-    }
+
+    // PRINT LAPORANPDF MASIH ERROR
+
+    // public function cetakpdf()
+    // {
+    //     $data = Produkmodel::all();
+    //     $param = [
+    //         'title'         => 'Cetak PDF',
+    //         'modulName'     => 'produk',
+    //         'daftarproduk'  => $data
+    //     ];
+    //     $pdf = PDF::loadview('laporanproduk', ['daftarproduk' => $data]);
+    //     return $pdf->download('laporanproduk.pdf');
+    // }
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DaftarProdukController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,14 +17,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Halaman Login
+Route::get('/', [HomeController::class,'index'])->name("home")->middleware('auth');
+
 
 //Halaman Homepage
-Route::get('/', [HomeController::class,'index']);
 //Halaman Profile
-Route::get('profile', [ProfileController::class,'index']);
+Route::get('profile', [ProfileController::class,'index'])->middleware('auth');
 
 //Halaman Kategori
-Route::get('kategori', [KategoriController::class,'index']);
+Route::get('kategori', [KategoriController::class,'index'])->middleware('admin');
 Route::get('kategoribaru', [KategoriController::class,'databaru']);
 Route::post('kategoriproduk', [KategoriController::class,'savedatabaru']);
 //Halaman Edit Kategori
@@ -41,4 +44,10 @@ Route::get('editproduk/{id}', [DaftarProdukController::class,'editproduk']);
 Route::patch('editProduk', [DaftarProdukController::class, 'saveeditproduk']);
 Route::delete('editProduk', [DaftarProdukController::class, 'hapusproduk']);
 
+//Laporan PDF
+Route::get('daftarproduk/laporan', [DaftarProdukController::class,'cetakpdf']);
 
+//Login/ Logout
+Route::get('login', [LoginController::class,'index'])->name("login");
+Route::post('login', [LoginController::class,'signin']);
+Route::get('login/logout', [LoginController::class,'logout']);

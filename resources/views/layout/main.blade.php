@@ -72,7 +72,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
+    <link href="{{asset('dashboard.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -88,7 +88,7 @@
             aria-label="Search">
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="#">Sign out</a>
+                <a class="nav-link px-3" href="{{'login/logout'}}">Sign out</a>
             </div>
         </div>
     </header>
@@ -122,12 +122,12 @@
                                 Daftar Produk
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('daftarproduk') }}">
+                        {{-- <li class="nav-item" >
+                            <a class="nav-link" href="{{ url('daftarproduk/laporan') }} ">
                                 <span data-feather="file" class="align-text-bottom"></span>
                                 Cetak Laporan
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
             </nav>
